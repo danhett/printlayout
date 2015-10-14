@@ -19,13 +19,17 @@ int bleed = 100;
 // gap in between images
 int gap = 10;
 
-// required rows and columns
+// required rows and columns (8x19 = 152 total images)
 int cols = 8;
 int rows = 19;
 
 // our dimensions per thumbnail (worked out when we start)
 float imageWidth;
 float imageHeight;
+
+// path to the images, and an offset to start from
+String path = "../../print grabs/session1/";
+int offset = 1;
 
 void setup()
 { 
@@ -42,15 +46,13 @@ void setup()
   {
     for(int j = 0; j < cols; j++)
     {
-      PImage image = loadImage("../../print grabs/session3/screen2+" + (200 + index) + ".png");
+      PImage image = loadImage(path + (offset + index) + ".png");
       print.image(image, 
                   bleed + (gap * j) + (imageWidth * j), 
                   bleed + (gap * i) + (imageHeight * i), 
                   imageWidth, 
                   imageHeight); 
-      
-      print("printing " + index);
-      
+                  
       index++;
     }   
   }
