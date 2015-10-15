@@ -29,6 +29,7 @@ float imageHeight;
 
 // path to the images, and an offset to start from
 String path = "../../print grabs/session1/";
+String extension = ".png";
 int offset = 1;
 
 void setup()
@@ -46,7 +47,7 @@ void setup()
   {
     for(int j = 0; j < cols; j++)
     {
-      PImage image = loadImage(path + (offset + index) + ".png");
+      PImage image = loadImage(path + (offset + index) + extension);
       print.image(image, 
                   bleed + (gap * j) + (imageWidth * j), 
                   bleed + (gap * i) + (imageHeight * i), 
